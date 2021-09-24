@@ -24,7 +24,7 @@ while ( buf != '\n' )
             printf ("Overflow error\n");
         }
         dec = dec << 1;
-        dec += buf - '0';   
+        dec += buf - '0';  *//if you entered 1, then add dec and buf* 
     }
     else 
     { 
