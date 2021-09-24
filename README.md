@@ -3,7 +3,7 @@
 The user enters a number in the binary number system, it is necessary to print it in the decimal number system. Bonus: provide for the use of negative numbers and the possibility of overflow. Input example: 101 Output example: 5
 
 ## The functionality of the written program: 
-converting unsigned numbers from binary to decimal.
+converting `unsigned` numbers from binary to decimal.
 
 The program is written in the Linux operating system (Centos), in the Visual Studio Code application in the C programming language.
 __________
