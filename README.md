@@ -8,10 +8,10 @@ converting `unsigned` numbers from binary to decimal.
 The program is written in the Linux operating system (Centos), in the Visual Studio Code application in the C programming language.
 __________
 
-```с
+
 #include "stdio.h" 
 #include "stdint.h"
-```
+
 int main() { uint64_t dec = 0; *// from "decision"* 
 char buf = getchar(); int k = 0; *//a counter that tracks invalid input*
 
