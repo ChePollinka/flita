@@ -8,7 +8,7 @@ converting `unsigned` numbers from binary to decimal.
 The program is written in the Linux operating system (Centos), in the Visual Studio Code application in the C programming language.
 __________
 
-
+```c
 #include "stdio.h" 
 #include "stdint.h"
 
@@ -39,6 +39,6 @@ while ( buf != '\n' )
     }
 return 0;
 }
-
+```
 
 
