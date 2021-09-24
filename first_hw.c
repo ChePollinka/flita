@@ -1,7 +1,7 @@
 #include "stdio.h"
 #include "stdint.h"
 
-int main() {
+int main(void) {
 
     uint64_t dec = 0;
     char buf = getchar();
