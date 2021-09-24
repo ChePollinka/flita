@@ -17,7 +17,7 @@ char buf = getchar(); int k = 0; *//a counter that tracks invalid input*
 
 while ( buf != '\n' )
 {
-    if ( (buf == '0') || (buf == '1') ) *//
+    if ( (buf == '0') || (buf == '1') ) *//the binary code filter is character-by-character
     {
         if ( dec >= ((uint64_t) 1) << 63 ) *//excluding the possibility of variable overflow*
         {
