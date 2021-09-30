@@ -1,33 +1,40 @@
-#include "stdio.h"
-#include "stdint.h"
+#include <stdio.h>
+#include <stdint.h>
+#include <stdbool.h>
+
+#define ONE ((uint64_t) 1)
 
 int main() {
 
     uint64_t dec = 0;
     char buf = getchar();
-    int k = 0;
+    bool Overflow = 0;
+    bool numb_er = 0;
 
-    while ( buf != '\n' )
+    while ( ( buf != '\n' ) && (Overflow == 0) && (numb_er == 0) )
     {
-        if ( (buf == '0') || (buf == '1') )
+        if ((buf == '0') || (buf == '1')) 
         {
-            if ( dec >= ((uint64_t) 1) << 63 )
+            if ( dec >=  ONE << 63 )
             {
-                printf ("Overflow error\n");
+                printf ("Overflow error\n"); 
+                Overflow = 1;
             }
             dec = dec << 1;
-            dec += buf - '0';
-            
+            dec += buf - '0';  
+
         }
         else 
         { 
             printf ("Number error\n"); 
-            k = 1;
+            numb_er = 1;
         }
 
         buf = getchar();
     }
-    if (k == 0) { printf ("decision: [%lu]\n", dec);}
+    if ((Overflow == 0) && (numb_er == 0)) { 
+        printf ("decision: [%lu]\n", dec);
+    }
 
     return 0;
 }
