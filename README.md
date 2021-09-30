@@ -31,7 +31,7 @@ int main() {
                 printf ("Overflow error\n"); 
                 Overflow = 1;
             }
-            dec = dec << 1;
+            dec <<= 1;
             dec += buf - '0';  *//if you entered 1, then add dec and buf*
 
         }
