@@ -51,5 +51,5 @@ int main() {
 }
 ```
 
-##to implement the code
+## to implement the code
 compile it (ctrl+shift+b) and run: command run -> start debugging (F5)
