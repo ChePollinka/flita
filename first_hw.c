@@ -22,7 +22,6 @@ int main(void) {
             }
             dec <<= 1;
             dec += buf - '0';  
-
         }
         else 
         { 

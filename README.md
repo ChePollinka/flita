@@ -9,36 +9,52 @@ The program is written in the Linux operating system (Centos), in the Visual Stu
 __________
 
 ```c
-#include "stdio.h" 
-#include "stdint.h"
 
-int main() { uint64_t dec = 0; *// from "decision"* 
-char buf = getchar(); int k = 0; *//a counter that tracks invalid input*
+#include <stdio.h>
+#include <stdint.h>
+#include <stdbool.h>
 
-while ( buf != '\n' )
-{
-    if ( (buf == '0') || (buf == '1') ) *//the binary code filter is character-by-character
+#define ONE ((uint64_t) 1)
+
+int main(void) {
+
+    uint64_t dec = 0; // from "decision" 
+    char buf = getchar();
+    bool Overflow = 0;
+    bool numb_er = 0;   *//a counter that tracks invalid input*
+
+    while ( ( buf != '\n' ) && (Overflow == 0) && (numb_er == 0) )
     {
-        if ( dec >= ((uint64_t) 1) << 63 ) *//excluding the possibility of variable overflow*
+        if ((buf == '0') || (buf == '1')) 
         {
-            printf ("Overflow error\n");
+            if ( dec >=  ONE << 63 )  *//excluding the possibility of variable overflow*
+            {
+                printf ("Overflow error\n"); 
+                Overflow = 1;
+            }
+            dec <<= 1;
+            dec += buf - '0';  *//if you entered 1, then add dec and buf* 
+
         }
-        dec = dec << 1;
-        dec += buf - '0';  *//if you entered 1, then add dec and buf* 
+        else 
+        { 
+            printf ("Number error\n"); 
+            numb_er = 1;
+        }
+
+        buf = getchar();
     }
-    else 
-    { 
-        printf ("Number error\n"); 
-        k = 1;
-    }
-    buf = getchar();
-}
-    if (k == 0) 
-    { 
+    if ((Overflow == 0) && (numb_er == 0)) { 
         printf ("decision: [%lu]\n", dec);
     }
-return 0;
+
+    return 0;
+    
 }
+
 ```
 
+___________
 
+## to implement the code
+compile it (ctrl+shift+b) and run: command run -> start debugging (F5)
