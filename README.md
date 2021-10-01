@@ -16,7 +16,7 @@ __________
 
 #define ONE ((uint64_t) 1)
 
-int main() {
+int main(void) {
 
     uint64_t dec = 0; // from "decision" 
     char buf = getchar();
